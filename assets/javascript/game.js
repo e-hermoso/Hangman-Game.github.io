@@ -38,6 +38,28 @@ for (i = 0; i < wordChoice.length; i++) {
 //     element3.innerHTML = wins;
     // console.log(split)
 
+    function reset() {console.log("game over");
+    wordChoice = words[Math.floor(Math.random() * words.length)];
+    letters.innerHTML = '<li class="current-word">Current word:</li>';
+    console.log(letters);
+    for (i = 0; i < wordChoice.length; i++) {
+        wordLetter = '<li class="letter letter' + wordChoice.charAt(i).toLowerCase() + '">' + wordChoice.charAt(i).toLowerCase() + '</li>';
+        // want to make sure its in the div before the last one.
+        // [element.insertAdjacentHTML(position,text)].
+        // we want it after the last child (child is the li).
+        // note that the parent tag is <ul>.
+        // beforened means right after the last child <li> So you are adding the tag.
+
+        letters.insertAdjacentHTML('beforeend', wordLetter);
+        console.log(wordLetter);
+    }
+    guessesLeft = 3;
+    // console.log(wordChoice);
+    userGuess = guessesSoFar;
+    guessesSoFar = [];
+    // console.log(guessesSoFar);
+  }
+
   var player = document.onkeyup = function(event){
   var userGuess = event.key.toLowerCase();
   var element1 = document.getElementById("p2");
@@ -76,25 +98,6 @@ for (i = 0; i < wordChoice.length; i++) {
         // console.log(lettersToShow[i]);
   }
   if(guessesLeft <= 0){
-    console.log("game over");
-    wordChoice = words[Math.floor(Math.random() * words.length)];
-    letters.innerHTML = '<li class="current-word">Current word:</li>';
-    console.log(letters);
-    for (i = 0; i < wordChoice.length; i++) {
-        wordLetter = '<li class="letter letter' + wordChoice.charAt(i).toLowerCase() + '">' + wordChoice.charAt(i).toLowerCase() + '</li>';
-        // want to make sure its in the div before the last one.
-        // [element.insertAdjacentHTML(position,text)].
-        // we want it after the last child (child is the li).
-        // note that the parent tag is <ul>.
-        // beforened means right after the last child <li> So you are adding the tag.
-
-        letters.insertAdjacentHTML('beforeend', wordLetter);
-        console.log(wordLetter);
-    }
-    guessesLeft = 3;
-    // console.log(wordChoice);
-    userGuess = guessesSoFar;
-    guessesSoFar = [];
-    // console.log(guessesSoFar);
-  }
+          reset();
+        }
 }
