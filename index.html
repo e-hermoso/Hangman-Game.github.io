@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HANGMAN---TEST</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <style type="text/css">
+  /* Simple way to hide the correct answer using JS to change the CSS
+  - improvement would be to not display characters */
+ .letter {
+    display: inline-block;
+    list-style: none;
+    width: 20px;
+    margin: 0 5px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    color: white;
+}
+.current-word {
+    list-style: none;
+}
+/* This is where the letter will dsiplay on the page if the user guesses it right.*/
+.correct {
+    background-color: green;
+    transition: all 1s ease;
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12">
+    			<h1>Hangman TEST</h1>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md-6">
+<!--     		<img src="assets/images/hangman.png"> -->
+    		</div>
+    		<div class="col-md-6">
+
+
+    		<h3>
+    		Wins:
+    		<p id="p3"></p>
+    		</h3>
+<!--    The correct word (current-word) will appear in the -> id=letters tag,
+        underlined and in white letters, the function will then change the css to a different collor as the user guesses the right letter. -->
+    		<h3>
+          <ul id="letters"></ul>
+          <!-- <li class="current-word">Current word:</li> -->
+    		</h3>
+
+    		<h3>
+    		Number of Guesses remaining:
+    		<p id="p1"> </p>
+    		</h3>
+
+    		<h3>
+    		Letters already guessed: <p id="p2"></p> <!-- <p id="p5"></p> -->
+        All correct letters guessed:
+    		</h3>
+    		</div>
+    	</div>
+    </div>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+  </body>
+</html>

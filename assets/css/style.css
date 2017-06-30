@@ -1,0 +1,19 @@
+/* Simple way to hide the correct answer using JS to change the CSS
+- improvement would be to not display characters */
+.letter {
+  display: inline-block;
+  list-style: none;
+  width: 20px;
+  margin: 0 5px;
+  border-bottom: 1px solid black;
+  text-align: center;
+  color: white;
+}
+.current-word {
+  list-style: none;
+}
+/* This is where the letter will dsiplay on the page if the user guesses it right.*/
+.correct {
+  background-color: green;
+  transition: all 1s ease;
+}
